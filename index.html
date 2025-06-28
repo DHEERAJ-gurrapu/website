@@ -8,11 +8,12 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f5f5f5;
+      background: url('https://cdn-icons-png.flaticon.com/512/181/181549.png') repeat;
+      background-size: 60px;
     }
 
     header {
-      background-color: #111;
+      background-color: rgba(0, 0, 0, 0.8);
       color: white;
       padding: 40px 20px;
       text-align: center;
@@ -28,6 +29,9 @@
       padding: 30px 20px;
       max-width: 1000px;
       margin: auto;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      margin-top: 20px;
     }
 
     .features {
@@ -45,6 +49,31 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .pen-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .pen-item {
+      flex: 1 1 300px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .pen-item h4 {
+      margin: 10px 0;
+    }
+
     .customize {
       background: #222;
       color: white;
@@ -53,7 +82,8 @@
       margin-top: 40px;
     }
 
-    .customize input, .customize select {
+    .customize input,
+    .customize select {
       padding: 10px;
       margin: 10px 0;
       width: 100%;
@@ -83,24 +113,34 @@
 <body>
 
   <header>
-    <h1>Hunter-X Pen </h1>
+    <h1>Hunter-X Pen</h1>
     <p>The ultimate customizable writing experience</p>
   </header>
 
   <section>
-    <h2>Why Choose Hunter-X?</h2>
-    <div class="features">
-      <div class="feature-box">
-        <h3>🖋 Smooth Writing</h3>
-        <p>Engineered with a precision tip and fluid ink system for a perfect stroke every time.</p>
+    <h2>🖊️ Personalizable Pens</h2>
+    <div class="pen-list">
+      <div class="pen-item">
+        <h4>Hunter-X Custom</h4>
+        <p>Choose your colors and engrave your name.</p>
       </div>
-      <div class="feature-box">
-        <h3>🎨 Personalizable</h3>
-        <p>Customize the grip, color, nib size, and even add your name!</p>
+      <div class="pen-item">
+        <h4>Hunter-X Duo</h4>
+        <p>Customize both body and grip for a unique look.</p>
       </div>
-      <div class="feature-box">
-        <h3>♻ Eco-Friendly</h3>
-        <p>Made with recyclable materials and refillable cartridges.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>✒️ Original Pens</h2>
+    <div class="pen-list">
+      <div class="pen-item">
+        <h4>Hunter-X Black</h4>
+        <p>Classic sleek black with premium ink.</p>
+      </div>
+      <div class="pen-item">
+        <h4>Hunter-X Blue</h4>
+        <p>Reliable and smooth, perfect for everyday writing.</p>
       </div>
     </div>
   </section>
@@ -108,19 +148,16 @@
   <section class="customize">
     <h2>🎨 Customize Your Hunter-X</h2>
     <form>
-      <label for="color">Choose Pen Color:</label>
-      <select id="color" name="color">
+      <label for="color1">Choose Body Color:</label>
+      <select id="color1" name="color1">
         <option value="black">Black</option>
         <option value="blue">Blue</option>
-        <option value="red">Red</option>
-        <option value="green">Green</option>
       </select>
 
-      <label for="nib">Nib Size:</label>
-      <select id="nib" name="nib">
-        <option value="0.5">0.5 mm</option>
-        <option value="0.7">0.7 mm</option>
-        <option value="1.0">1.0 mm</option>
+      <label for="color2">Choose Grip Color:</label>
+      <select id="color2" name="color2">
+        <option value="black">Black</option>
+        <option value="blue">Blue</option>
       </select>
 
       <label for="engraving">Name Engraving:</label>
@@ -131,7 +168,7 @@
   </section>
 
   <footer>
-    &copy; 2025 Hunter-X (Dheeraj) | All rights reserved
+    &copy; 2025 Hunter-X | All rights reserved
   </footer>
 
 </body>
