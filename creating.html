@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Pen is Being Created - Hunter-X</title>
+  <title>Pen Creation - Hunter-X</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -70,15 +70,46 @@
 
   <div class="container">
     <h1>Your Pen is Being Created!</h1>
-    <p>Please scan the QR code below to pay and complete your order.</p>
 
-    <!-- QR code image -->
+    <p><strong>Engraving:</strong> <span id="nameEngraved"></span></p>
+    <p><strong>Body Color:</strong> <span id="bodyColor"></span></p>
+    <p><strong>Grip Color:</strong> <span id="gripColor"></span></p>
+
+    <div id="refillDetails" style="display: none;">
+      <p><strong>Refill Added:</strong> <span id="refillColor"></span> (₹15)</p>
+    </div>
+
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://your-payment-link.com" alt="QR Code to Pay">
 
     <div class="pricing">
-      <p><strong>🖊️ Pen Price:</strong> ₹100</p>
-      <p><strong>➕ Refill (Optional):</strong> ₹15 extra</p>
+      <p><strong>Pen Price:</strong> ₹100</p>
+      <p id="refillPrice" style="display:none;"><strong>+ Refill:</strong> ₹15</p>
+      <hr>
+      <p><strong>Total:</strong> ₹<span id="totalPrice">100</span></p>
     </div>
+
+    <a href="hunterx.html" class="back-link">⬅ Back to Home</a>
+  </div>
+
+  <script>
+    // Get form data from URL
+    const urlParams = new URLSearchParams(window.location.search);
+
+    document.getElementById("nameEngraved").textContent = urlParams.get("engraving");
+    document.getElementById("bodyColor").textContent = urlParams.get("bodyColor");
+    document.getElementById("gripColor").textContent = urlParams.get("gripColor");
+
+    if (urlParams.get("addRefill") === "yes") {
+      document.getElementById("refillDetails").style.display = "block";
+      document.getElementById("refillColor").textContent = urlParams.get("refillColor");
+      document.getElementById("refillPrice").style.display = "block";
+      document.getElementById("totalPrice").textContent = "115";
+    }
+  </script>
+
+</body>
+</html>
+
 
     <a href="hunterx.html" class="back-link">⬅ Back to Home</a>
   </div>
