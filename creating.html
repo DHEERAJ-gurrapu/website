@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Pen is Being Created - Hunter-X</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: gold;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      width: 90%;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+
+    img {
+      margin: 20px 0;
+      width: 200px;
+      height: 200px;
+    }
+
+    .pricing {
+      margin-top: 10px;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #000;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .back-link:hover {
+      background: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Your Pen is Being Created!</h1>
+    <p>Please scan the QR code below to pay and complete your order.</p>
+
+    <!-- QR code image -->
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://your-payment-link.com" alt="QR Code to Pay">
+
+    <div class="pricing">
+      <p><strong>🖊️ Pen Price:</strong> ₹100</p>
+      <p><strong>➕ Refill (Optional):</strong> ₹15 extra</p>
+    </div>
+
+    <a href="hunterx.html" class="back-link">⬅ Back to Home</a>
+  </div>
+
+</body>
+</html>
