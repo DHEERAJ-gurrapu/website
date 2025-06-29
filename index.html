@@ -98,7 +98,7 @@
       <li>Black or Blue ink available</li>
       <li>Refill optional (₹15 extra)</li>
       <li>Pen cost: ₹100</li>
-      <li>Delivery within 3-5 business days</li>
+      <li>Delivery within 3–5 business days</li>
     </ul>
   </section>
 
@@ -185,41 +185,29 @@
     const form = document.getElementById("penForm");
     form.addEventListener("submit", function(e) {
       e.preventDefault();
-      fetch("https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec", {
+
+      fetch("https://script.google.com/macros/s/AKfycby8SHbbN-aTcEXZ60HT2sNeQmQPaOYxiG7t5AmaRJF1fNHOWGgekiaCUrDKTnsaW9XltQ/exec", {
         method: "POST",
         body: new FormData(form)
-      }).then(() => {
-        window.location.href = "creating.html";
-      }).catch(() => {
-        alert("Something went wrong!");
+      })
+      .then(res => res.text())
+      .then(text => {
+        if (text.includes("Success")) {
+          window.location.href = "creating.html";
+        } else {
+          alert("Something went wrong:\n" + text);
+        }
+      })
+      .catch((err) => {
+        alert("Something went wrong (network error).");
+        console.log(err);
       });
     });
   </script>
 
 </body>
-</html><script>
-  const form = document.getElementById("penForm");
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
+</html>
 
-    fetch("https://script.google.com/macros/s/AKfycby8SHbbN-aTcEXZ60HT2sNeQmQPaOYxiG7t5AmaRJF1fNHOWGgekiaCUrDKTnsaW9XltQ/exec", {
-      method: "POST",
-      body: new FormData(form)
-    })
-    .then(res => res.text())
-    .then(text => {
-      if (text.includes("Success")) {
-        window.location.href = "creating.html";
-      } else {
-        alert("Something went wrong:\n" + text);
-      }
-    })
-    .catch((err) => {
-      alert("Something went wrong (network error).");
-      console.log(err);
-    });
-  });
-</script>
 
 
 
