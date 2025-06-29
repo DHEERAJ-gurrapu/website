@@ -11,20 +11,12 @@
       background: url('https://cdn-icons-png.flaticon.com/512/181/181549.png') repeat;
       background-size: 60px;
     }
-
     header {
       background-color: rgba(0, 0, 0, 0.8);
       color: white;
       padding: 40px 20px;
       text-align: center;
     }
-
-    header h1 {
-      margin: 0;
-      font-size: 3em;
-      letter-spacing: 2px;
-    }
-
     section {
       padding: 30px 20px;
       max-width: 1000px;
@@ -33,14 +25,12 @@
       border-radius: 10px;
       margin-top: 20px;
     }
-
     .pen-list {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       margin-top: 20px;
     }
-
     .pen-item {
       flex: 1 1 300px;
       background: white;
@@ -49,11 +39,6 @@
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
       text-align: center;
     }
-
-    .pen-item h4 {
-      margin: 10px 0;
-    }
-
     .customize {
       background: #222;
       color: white;
@@ -61,7 +46,6 @@
       border-radius: 10px;
       margin-top: 40px;
     }
-
     .customize input,
     .customize select {
       padding: 10px;
@@ -70,7 +54,6 @@
       border: none;
       border-radius: 5px;
     }
-
     .customize button {
       background: #00c853;
       color: white;
@@ -80,7 +63,6 @@
       font-size: 1em;
       cursor: pointer;
     }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -114,66 +96,55 @@
   <section class="customize">
     <h2>🎨 Customize Your Hunter-X</h2>
 
-    <form action="https://formsubmit.co/dheera.gurrapu@gmail.com" method="POST" onsubmit="return validateForm()">
-      <!-- Hidden config fields -->
-      <input type="hidden" name="_next" value="creating.html">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_autoresponse" value="Thanks for your order! We are now creating your Hunter-X pen. You'll get it soon.">
+    <form action="https://formspree.io/f/xyznabcd" method="POST" onsubmit="return validateForm()">
+      <!-- Replace with your Formspree form ID -->
 
-      <div style="margin-bottom: 15px;">
-        <label for="color1">Choose Body Color:</label><br />
-        <select id="color1" name="Body Color" required>
-          <option value="gold">Gold</option>
-          <option value="silver">Silver</option>
-          <option value="black">Black</option>
-          <option value="red">Red</option>
-          <option value="green">Green</option>
-          <option value="yellow">Yellow</option>
-          <option value="blue">Blue</option>
-          <option value="brown">Brown</option>
-          <option value="orange">Orange</option>
-          <option value="pink">Pink</option>
-          <option value="purple">Purple</option>
-          <option value="gray">Gray</option>
-        </select>
-      </div>
+      <label>Choose Body Color:</label>
+      <select name="Body Color" required>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
+        <option value="blue">Blue</option>
+        <option value="brown">Brown</option>
+        <option value="orange">Orange</option>
+        <option value="pink">Pink</option>
+        <option value="purple">Purple</option>
+        <option value="gray">Gray</option>
+      </select>
 
-      <div style="margin-bottom: 15px;">
-        <label for="email">Your Email:</label><br />
-        <input type="email" id="email" name="email" placeholder="Enter your email" required />
-      </div>
+      <label>Your Email:</label>
+      <input type="email" name="email" placeholder="Enter your email" required />
 
-      <div style="margin-bottom: 15px;">
-        <label for="color2">Choose Grip Color:</label><br />
-        <select id="color2" name="Grip Color" required>
-          <option value="gold">Gold</option>
-          <option value="silver">Silver</option>
-          <option value="black">Black</option>
-          <option value="red">Red</option>
-          <option value="green">Green</option>
-          <option value="yellow">Yellow</option>
-          <option value="blue">Blue</option>
-          <option value="brown">Brown</option>
-          <option value="orange">Orange</option>
-          <option value="pink">Pink</option>
-          <option value="purple">Purple</option>
-          <option value="gray">Gray</option>
-        </select>
-      </div>
+      <label>Choose Grip Color:</label>
+      <select name="Grip Color" required>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
+        <option value="blue">Blue</option>
+        <option value="brown">Brown</option>
+        <option value="orange">Orange</option>
+        <option value="pink">Pink</option>
+        <option value="purple">Purple</option>
+        <option value="gray">Gray</option>
+      </select>
 
-      <div style="margin-bottom: 15px;">
-        <label for="engraving">Name Engraving:</label><br />
-        <input type="text" id="engraving" name="Engraving Name" placeholder="Enter your name" required />
-      </div>
+      <label>Name Engraving:</label>
+      <input type="text" name="Engraving Name" placeholder="Enter your name" required />
 
-      <div style="margin-bottom: 15px;">
+      <label>
         <input type="checkbox" id="addRefill" name="Add Refill" value="Yes" onclick="toggleRefillOptions()" />
-        <label for="addRefill">Add Refill (₹15 extra)</label>
-      </div>
+        Add Refill (₹15 extra)
+      </label>
 
-      <div id="refillOptions" style="display: none; margin-bottom: 15px;">
-        <label for="refillColor">Choose Refill Color:</label><br />
-        <select id="refillColor" name="Refill Color">
+      <div id="refillOptions" style="display: none;">
+        <label>Refill Color:</label>
+        <select name="Refill Color">
           <option value="">-- Select --</option>
           <option value="black">Black</option>
           <option value="blue">Blue</option>
@@ -190,16 +161,15 @@
 
   <script>
     function toggleRefillOptions() {
-      const refillBox = document.getElementById('refillOptions');
-      const checkbox = document.getElementById('addRefill');
-      refillBox.style.display = checkbox.checked ? 'block' : 'none';
+      document.getElementById('refillOptions').style.display = 
+        document.getElementById('addRefill').checked ? 'block' : 'none';
     }
 
     function validateForm() {
       const checkbox = document.getElementById('addRefill');
-      const refillColor = document.getElementById('refillColor');
+      const refillColor = document.querySelector('[name="Refill Color"]');
       if (checkbox.checked && !refillColor.value) {
-        alert('Please select a refill color.');
+        alert("Please select a refill color.");
         return false;
       }
       return true;
@@ -208,6 +178,7 @@
 
 </body>
 </html>
+
 
 
 
