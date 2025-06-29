@@ -1,122 +1,204 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Hunter-X Pen Order</title>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <title>Hunter-X Pen</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: gold;
-      padding: 30px;
+      margin: 0;
+      background: url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?fit=crop&w=1500&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
     }
-    h1 {
+
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 40px 20px;
       text-align: center;
-      color: black;
     }
-    form {
-      background: white;
-      padding: 20px;
-      max-width: 500px;
-      margin: auto;
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    section {
+      background: rgba(255, 255, 255, 0.95);
+      margin: 20px auto;
+      padding: 30px;
+      max-width: 900px;
       border-radius: 10px;
-      box-shadow: 0 0 10px #aaa;
     }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 260px;
+      text-align: center;
+    }
+
+    .form-section form {
+      display: flex;
+      flex-direction: column;
+    }
+
     label {
-      display: block;
       margin-top: 10px;
     }
-    select, input {
-      width: 100%;
+
+    input, select {
       padding: 8px;
       margin-top: 5px;
-      border-radius: 5px;
       border: 1px solid #ccc;
+      border-radius: 5px;
     }
+
     button {
       margin-top: 20px;
-      background: green;
-      color: white;
       padding: 10px;
+      background-color: #00c853;
+      color: white;
       border: none;
-      width: 100%;
       border-radius: 5px;
       font-size: 1em;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: black;
+      color: white;
     }
   </style>
 </head>
 <body>
 
-  <h1>Customize Your Hunter-X Pen</h1>
-  <form id="penForm">
-    <label>Email:
-      <input type="email" name="email" required>
-    </label>
+  <header>
+    <h1>Hunter-X Pens</h1>
+    <p>The ultimate customizable writing experience</p>
+  </header>
 
-    <label>Body Color:
-      <select name="bodyColor" required>
-        <option>Gold</option><option>Silver</option><option>Black</option>
-        <option>Red</option><option>Green</option><option>Blue</option>
-        <option>Yellow</option><option>Orange</option><option>Brown</option>
-        <option>Pink</option><option>Purple</option><option>Gray</option>
-      </select>
-    </label>
+  <section>
+    <h2>🖋️ About Hunter-X</h2>
+    <p>Hunter-X is a revolutionary customizable pen brand built for writers, students, and creators. Select from a variety of body and grip colors, engrave your name, and choose between original ink options.</p>
+    <ul>
+      <li>Fully customizable: body color, grip color, name engraving</li>
+      <li>Black or Blue ink available</li>
+      <li>Refill optional (₹15 extra)</li>
+      <li>Pen cost: ₹100</li>
+      <li>Delivery within 3-5 business days</li>
+    </ul>
+  </section>
 
-    <label>Grip Color:
-      <select name="gripColor" required>
-        <option>Gold</option><option>Silver</option><option>Black</option>
-        <option>Red</option><option>Green</option><option>Blue</option>
-        <option>Yellow</option><option>Orange</option><option>Brown</option>
-        <option>Pink</option><option>Purple</option><option>Gray</option>
-      </select>
-    </label>
+  <section>
+    <h2>✨ Our Pens</h2>
+    <div class="product-grid">
+      <div class="card">
+        <h3>Hunter-X Custom</h3>
+        <p>Choose your colors and engrave your name.</p>
+      </div>
+      <div class="card">
+        <h3>Hunter-X Duo</h3>
+        <p>Customize both body and grip for a unique look.</p>
+      </div>
+      <div class="card">
+        <h3>Hunter-X Black</h3>
+        <p>Classic sleek black with premium ink.</p>
+      </div>
+      <div class="card">
+        <h3>Hunter-X Blue</h3>
+        <p>Reliable and smooth, perfect for everyday writing.</p>
+      </div>
+    </div>
+  </section>
 
-    <label>Name Engraving:
-      <input type="text" name="engraving" required>
-    </label>
+  <section class="form-section">
+    <h2>🎨 Customize Your Pen</h2>
+    <form id="penForm">
+      <label>Email:
+        <input type="email" name="email" required />
+      </label>
 
-    <label>Add Refill?
-      <select name="addRefill" onchange="toggleRefill(this)">
-        <option>No</option>
-        <option>Yes</option>
-      </select>
-    </label>
+      <label>Body Color:
+        <select name="bodyColor" required>
+          <option>Gold</option><option>Silver</option><option>Black</option>
+          <option>Red</option><option>Green</option><option>Yellow</option>
+          <option>Blue</option><option>Brown</option><option>Orange</option>
+          <option>Pink</option><option>Purple</option><option>Gray</option>
+        </select>
+      </label>
 
-    <label id="refillLabel" style="display:none;">Refill Color:
-      <select name="refillColor">
-        <option value="">--Select--</option>
-        <option>Black</option>
-        <option>Blue</option>
-      </select>
-    </label>
+      <label>Grip Color:
+        <select name="gripColor" required>
+          <option>Gold</option><option>Silver</option><option>Black</option>
+          <option>Red</option><option>Green</option><option>Yellow</option>
+          <option>Blue</option><option>Brown</option><option>Orange</option>
+          <option>Pink</option><option>Purple</option><option>Gray</option>
+        </select>
+      </label>
 
-    <button type="submit">Create My Pen</button>
-  </form>
+      <label>Name Engraving:
+        <input type="text" name="engraving" required />
+      </label>
+
+      <label>Add Refill?
+        <select name="addRefill" onchange="toggleRefill(this)">
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+      </label>
+
+      <label id="refillLabel" style="display:none;">Refill Color:
+        <select name="refillColor">
+          <option value="">--Select--</option>
+          <option>Black</option>
+          <option>Blue</option>
+        </select>
+      </label>
+
+      <button type="submit">Create My Pen</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Hunter-X Pens. All rights reserved.
+  </footer>
 
   <script>
-    const form = document.getElementById("penForm");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      fetch("https://script.google.com/macros/s/AKfycbv8SHbbN-aTcEXZ60HT2sNeQmQPaOYxiG7t5AmaRJF1fNH0WGgekiaCUrDkTnsaW9xItQ/exec", {
-        method: "POST",
-        body: new FormData(form)
-      })
-      .then(() => {
-        window.location.href = "creating.html";
-      })
-      .catch(() => {
-        alert("There was an error. Try again.");
-      });
-    });
-
     function toggleRefill(select) {
       const label = document.getElementById("refillLabel");
       label.style.display = select.value === "Yes" ? "block" : "none";
     }
+
+    const form = document.getElementById("penForm");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      fetch("https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec", {
+        method: "POST",
+        body: new FormData(form)
+      }).then(() => {
+        window.location.href = "creating.html";
+      }).catch(() => {
+        alert("Something went wrong!");
+      });
+    });
   </script>
 
 </body>
 </html>
+
 
 
 
