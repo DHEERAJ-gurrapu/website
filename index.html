@@ -197,7 +197,30 @@
   </script>
 
 </body>
-</html>
+</html><script>
+  const form = document.getElementById("penForm");
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    fetch("https://script.google.com/macros/s/AKfycby8SHbbN-aTcEXZ60HT2sNeQmQPaOYxiG7t5AmaRJF1fNHOWGgekiaCUrDKTnsaW9XltQ/exec", {
+      method: "POST",
+      body: new FormData(form)
+    })
+    .then(res => res.text())
+    .then(text => {
+      if (text.includes("Success")) {
+        window.location.href = "creating.html";
+      } else {
+        alert("Something went wrong:\n" + text);
+      }
+    })
+    .catch((err) => {
+      alert("Something went wrong (network error).");
+      console.log(err);
+    });
+  });
+</script>
+
 
 
 
