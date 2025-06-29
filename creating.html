@@ -2,117 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pen Creation - Hunter-X</title>
+  <title>Your Pen is Being Created</title>
   <style>
     body {
+      background: gold;
       font-family: Arial, sans-serif;
-      background-color: gold;
-      margin: 0;
-      padding: 0;
       text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      padding: 50px;
+      color: black;
     }
-
-    .container {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      max-width: 500px;
-      width: 90%;
+    img {
+      width: 200px;
+      margin: 20px 0;
     }
-
     h1 {
       font-size: 2em;
-      margin-bottom: 20px;
-      color: #000;
-    }
-
-    p {
-      font-size: 1.1em;
-      margin: 10px 0;
-    }
-
-    img {
-      margin: 20px 0;
-      width: 200px;
-      height: 200px;
-    }
-
-    .pricing {
-      margin-top: 10px;
-      background: #f9f9f9;
-      border: 1px solid #ccc;
-      padding: 15px;
-      border-radius: 8px;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #000;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    .back-link:hover {
-      background: #444;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>Your Pen is Being Created!</h1>
+  <h1>🛠️ Your Pen is Being Created...</h1>
+  <p>We have sent an activation link to the admin.<br>
+  Your form will be activated in a few minutes.<br>
+  <strong>Please don’t close this tab.</strong></p>
 
-    <p><strong>Engraving:</strong> <span id="nameEngraved"></span></p>
-    <p><strong>Body Color:</strong> <span id="bodyColor"></span></p>
-    <p><strong>Grip Color:</strong> <span id="gripColor"></span></p>
+  <h2>💳 Please Scan the QR Code to Pay</h2>
+  <p>₹100 for the pen<br>+ ₹15 extra if you added a refill</p>
 
-    <div id="refillDetails" style="display: none;">
-      <p><strong>Refill Added:</strong> <span id="refillColor"></span> (₹15)</p>
-    </div>
-
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://your-payment-link.com" alt="QR Code to Pay">
-
-    <div class="pricing">
-      <p><strong>Pen Price:</strong> ₹100</p>
-      <p id="refillPrice" style="display:none;"><strong>+ Refill:</strong> ₹15</p>
-      <hr>
-      <p><strong>Total:</strong> ₹<span id="totalPrice">100</span></p>
-    </div>
-
-    <a href="hunterx.html" class="back-link">⬅ Back to Home</a>
-  </div>
-
-  <script>
-    // Get form data from URL
-    const urlParams = new URLSearchParams(window.location.search);
-
-    document.getElementById("nameEngraved").textContent = urlParams.get("engraving");
-    document.getElementById("bodyColor").textContent = urlParams.get("bodyColor");
-    document.getElementById("gripColor").textContent = urlParams.get("gripColor");
-
-    if (urlParams.get("addRefill") === "yes") {
-      document.getElementById("refillDetails").style.display = "block";
-      document.getElementById("refillColor").textContent = urlParams.get("refillColor");
-      document.getElementById("refillPrice").style.display = "block";
-      document.getElementById("totalPrice").textContent = "115";
-    }
-  </script>
+  <!-- Replace this with your actual UPI QR code image -->
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay" alt="Scan to Pay">
 
 </body>
 </html>
 
-
-    <a href="hunterx.html" class="back-link">⬅ Back to Home</a>
-  </div>
-
-</body>
-</html>
