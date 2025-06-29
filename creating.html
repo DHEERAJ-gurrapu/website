@@ -1,31 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Creating Your Pen</title>
   <style>
     body {
-      background: gold;
       font-family: Arial, sans-serif;
+      background-color: #fff8dc;
       text-align: center;
       padding: 50px;
     }
-    img {
-      width: 200px;
+
+    .box {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: inline-block;
+      padding: 30px;
+      max-width: 500px;
+    }
+
+    h1 {
+      color: #222;
+    }
+
+    .note {
       margin-top: 20px;
+      font-size: 18px;
+      color: #444;
+    }
+
+    .qr {
+      margin-top: 30px;
+    }
+
+    img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .cod-warning {
+      margin-top: 25px;
+      font-size: 20px;
+      font-weight: bold;
+      color: red;
+      text-transform: uppercase;
     }
   </style>
 </head>
 <body>
 
-  <h1>🛠️ Your Hunter-X Pen is Being Created</h1>
-  <p>Thank you! We’ve received your order.<br>
-     Please scan the QR code below to pay:</p>
+  <div class="box">
+    <h1>Your Pen is Being Created ✨</h1>
+    
+    <p class="note">
+      Please scan the QR code below to pay ₹100 for the pen.<br>
+      Add ₹15 more if you selected a refill.
+    </p>
 
-  <h3>₹100 for pen + ₹15 for refill (if selected)</h3>
+    <div class="qr">
+      <img src="Screenshot 2025-06-29 at 11.19.56 PM.png" alt="Pay QR Code">
+    </div>
 
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay" alt="Scan to Pay QR" />
+    <p class="note">UPI Name: <strong>Sumalatha Gurrapu</strong></p>
+
+    <p class="cod-warning">🚫 NO CASH ON DELIVERY !!!</p>
+  </div>
 
 </body>
 </html>
+
 
 
