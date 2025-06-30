@@ -1,75 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Creating the Laser Security System</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Pen is Being Created</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background: #f4f4f4;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-    }
-
-    header {
-      background-color: #000;
-      color: white;
-      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       text-align: center;
-      font-size: 28px;
     }
-
-    main {
-      padding: 30px;
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
-
-    h2 {
+    h1 {
       color: #333;
     }
-
-    .email-contact {
-      margin-top: 40px;
-      background: #e6f0ff;
-      padding: 20px;
-      border-left: 5px solid #4285F4;
+    p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    .warning {
+      color: red;
+      font-weight: bold;
+      margin-top: 20px;
       font-size: 18px;
     }
-
-    .email-contact a {
-      color: #1a73e8;
-      text-decoration: none;
-      font-weight: bold;
+    .qr-image {
+      width: 200px;
+      margin-top: 20px;
     }
-
-    footer {
-      margin-top: 60px;
-      padding: 15px;
-      text-align: center;
-      background: #222;
-      color: #ccc;
+    .contact {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #555;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    Creating the Laser Security System
-  </header>
-
-  <main>
-    <h2>Step-by-Step Instructions</h2>
-    <p>Follow the guide to build your laser security system using a laser pointer, LDR, transistor, and buzzer.</p>
-    <p>Make sure the laser points directly at the LDR. When the beam is interrupted, the buzzer will sound an alarm.</p>
-
-    <div class="email-contact">
-      Any questions? Contact us at <a href="mailto:Dheera.gurrapu@gmail.com">Dheera.gurrapu@gmail.com</a>.
-    </div>
-  </main>
-
-  <footer>
-    &copy; 2025 Hunter-X. All rights reserved.
-  </footer>
-
+  <div class="container">
+    <h1>Your Pen is Being Created ✨</h1>
+    <p>Please scan the QR code below to pay ₹100 for the pen.<br>Add ₹15 more if you selected a refill.</p>
+    <img src="https://i.imgur.com/YOUR_QR_IMAGE.png" alt="Pay QR Code" class="qr-image">
+    <p><strong>UPI Name:</strong> Sumalatha Gurrapu</p>
+    <p class="warning">🚫 NO CASH ON DELIVERY !!!</p>
+    <p class="contact">Any questions? Contact: <strong>Dheera.gurrapu@gmail.com</strong></p>
+  </div>
 </body>
 </html>
 
