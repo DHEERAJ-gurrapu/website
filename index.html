@@ -32,22 +32,6 @@
       border-radius: 10px;
     }
 
-    .product-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      width: 260px;
-      text-align: center;
-    }
-
     .form-section form {
       display: flex;
       flex-direction: column;
@@ -57,7 +41,7 @@
       margin-top: 10px;
     }
 
-    input, select, textarea {
+    input, select {
       padding: 8px;
       margin-top: 5px;
       border: 1px solid #ccc;
@@ -90,40 +74,6 @@
     <p>The ultimate customizable writing experience</p>
   </header>
 
-  <section>
-    <h2>🖋️ About Hunter-X</h2>
-    <p>Hunter-X is a revolutionary customizable pen brand built for writers, students, and creators. Select from a variety of body and grip colors, engrave your name, and choose between original ink options.</p>
-    <ul>
-      <li>Fully customizable: body color, grip color, name engraving</li>
-      <li>Black or Blue ink available</li>
-      <li>Refill optional (₹15 extra)</li>
-      <li>Pen cost: ₹100</li>
-      <li>Delivery within 3–5 business days</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>✨ Our Pens</h2>
-    <div class="product-grid">
-      <div class="card">
-        <h3>Hunter-X Custom</h3>
-        <p>Choose your colors and engrave your name.</p>
-      </div>
-      <div class="card">
-        <h3>Hunter-X Duo</h3>
-        <p>Customize both body and grip for a unique look.</p>
-      </div>
-      <div class="card">
-        <h3>Hunter-X Black</h3>
-        <p>Classic sleek black with premium ink.</p>
-      </div>
-      <div class="card">
-        <h3>Hunter-X Blue</h3>
-        <p>Reliable and smooth, perfect for everyday writing.</p>
-      </div>
-    </div>
-  </section>
-
   <section class="form-section">
     <h2>🎨 Customize Your Pen</h2>
     <form id="penForm">
@@ -132,12 +82,12 @@
       </label>
 
       <label>Address:
-        <textarea name="address" rows="3" required placeholder="Enter full delivery address"></textarea>
+        <input type="text" name="address" required />
       </label>
 
       <label>Body Color:
         <select name="bodyColor" required>
-          <<option>Black</option>
+          <option>Gold</option><option>Silver</option><option>Black</option>
           <option>Red</option><option>Green</option><option>Yellow</option>
           <option>Blue</option><option>Brown</option><option>Orange</option>
           <option>Pink</option><option>Purple</option><option>Gray</option>
@@ -146,7 +96,7 @@
 
       <label>Grip Color:
         <select name="gripColor" required>
-          <option>Black</option><option>White<option>
+          <option>Gold</option><option>Silver</option><option>Black</option>
           <option>Red</option><option>Green</option><option>Yellow</option>
           <option>Blue</option><option>Brown</option><option>Orange</option>
           <option>Pink</option><option>Purple</option><option>Gray</option>
@@ -157,14 +107,16 @@
         <input type="text" name="engraving" required />
       </label>
 
-      <label>Add Refill?
-        <select name="addRefill" onchange="toggleRefill(this)">
-          <option>No</option>
-          <option>Yes</option>
+      <label>Number of Refills (max 3):
+        <select name="refillCount" id="refillCount" onchange="toggleRefillColor()">
+          <option value="0">0 (No Refill)</option>
+          <option value="1">1 Refill</option>
+          <option value="2">2 Refills</option>
+          <option value="3">3 Refills</option>
         </select>
       </label>
 
-      <label id="refillLabel" style="display:none;">Refill Color:
+      <label id="refillColorLabel" style="display:none;">Refill Color:
         <select name="refillColor">
           <option value="">--Select--</option>
           <option>Black</option>
@@ -181,36 +133,36 @@
   </footer>
 
   <script>
-    function toggleRefill(select) {
-      const label = document.getElementById("refillLabel");
-      label.style.display = select.value === "Yes" ? "block" : "none";
+    function toggleRefillColor() {
+      const count = document.getElementById("refillCount").value;
+      const label = document.getElementById("refillColorLabel");
+      label.style.display = count === "0" ? "none" : "block";
     }
 
-    const form = document.getElementById("penForm");
-    form.addEventListener("submit", function(e) {
+    document.getElementById("penForm").addEventListener("submit", function(e) {
       e.preventDefault();
 
-      fetch("https://script.google.com/macros/s/AKfycby8SHbbN-aTcEXZ60HT2sNeQmQPaOYxiG7t5AmaRJF1fNHOWGgekiaCUrDKTnsaW9XltQ/exec", {
-        method: "POST",
-        body: new FormData(form)
-      })
-      .then(res => res.text())
-      .then(text => {
-        if (text.includes("Success")) {
-          window.location.href = "creating.html";
-        } else {
-          alert("Something went wrong:\n" + text);
-        }
-      })
-      .catch((err) => {
-        alert("Something went wrong (network error).");
-        console.log(err);
-      });
+      const form = new FormData(this);
+      const msg =
+        `Hi, I just paid for the Hunter-X Pen.\n\n` +
+        `Email: ${form.get("email")}\n` +
+        `Address: ${form.get("address")}\n` +
+        `Body Color: ${form.get("bodyColor")}\n` +
+        `Grip Color: ${form.get("gripColor")}\n` +
+        `Engraving: ${form.get("engraving")}\n` +
+        `Refill Count: ${form.get("refillCount")}\n` +
+        `Refill Color: ${form.get("refillColor") || "None"}`;
+
+      const phone = "919xxxxxxxxx"; // Replace with your WhatsApp number
+      const encodedMsg = encodeURIComponent(msg);
+      const link = `https://wa.me/${phone}?text=${encodedMsg}`;
+
+      window.open(link, '_blank');
     });
   </script>
-
 </body>
 </html>
+
 
 
 
