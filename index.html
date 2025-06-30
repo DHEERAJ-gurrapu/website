@@ -59,6 +59,16 @@
       cursor: pointer;
     }
 
+    .warning {
+      background: #ffd1d1;
+      color: #b30000;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -79,6 +89,10 @@
     <form id="penForm">
       <label>Email:
         <input type="email" name="email" required />
+      </label>
+
+      <label>Phone Number:
+        <input type="tel" name="phone" required />
       </label>
 
       <label>Address:
@@ -124,6 +138,8 @@
         </select>
       </label>
 
+      <div class="warning">⚠️ NO CASH ON DELIVERY!</div>
+
       <button type="submit">Create My Pen</button>
     </form>
   </section>
@@ -146,6 +162,7 @@
       const msg =
         `Hi, I just paid for the Hunter-X Pen.\n\n` +
         `Email: ${form.get("email")}\n` +
+        `Phone: ${form.get("phone")}\n` +
         `Address: ${form.get("address")}\n` +
         `Body Color: ${form.get("bodyColor")}\n` +
         `Grip Color: ${form.get("gripColor")}\n` +
@@ -153,7 +170,7 @@
         `Refill Count: ${form.get("refillCount")}\n` +
         `Refill Color: ${form.get("refillColor") || "None"}`;
 
-      const phone = "919xxxxxxxxx"; // Replace with your WhatsApp number
+      const phone = "919xxxxxxxxx"; // 👈 Replace this with your WhatsApp number
       const encodedMsg = encodeURIComponent(msg);
       const link = `https://wa.me/${phone}?text=${encodedMsg}`;
 
@@ -162,6 +179,7 @@
   </script>
 </body>
 </html>
+
 
 
 
