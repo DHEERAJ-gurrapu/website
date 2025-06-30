@@ -1,76 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Creating Your Pen</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #fff8dc;
       text-align: center;
-      padding: 50px;
-    }
-
-    .box {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      display: inline-block;
-      padding: 30px;
-      max-width: 500px;
+      padding: 40px;
+      background: #fefefe;
     }
 
     h1 {
-      color: #222;
+      font-size: 2em;
+      margin-bottom: 10px;
     }
 
-    .note {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #444;
-    }
-
-    .qr {
-      margin-top: 30px;
+    p {
+      font-size: 1.1em;
     }
 
     img {
-      width: 250px;
-      height: auto;
+      width: 200px;
+      margin: 20px 0;
+      border: 2px solid #ccc;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
 
-    .cod-warning {
-      margin-top: 25px;
-      font-size: 20px;
-      font-weight: bold;
+    .no-cod {
       color: red;
-      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.3em;
+      margin-top: 20px;
+    }
+
+    .upi {
+      font-size: 1.1em;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
+  <h1>Your Pen is Being Created ✨</h1>
 
-  <div class="box">
-    <h1>Your Pen is Being Created ✨</h1>
-    
-    <p class="note">
-      Please scan the QR code below to pay ₹100 for the pen.<br>
-      Add ₹15 more if you selected a refill.
-    </p>
+  <p>Please scan the QR code below to pay ₹100 for the pen.<br>
+     Add ₹15 more if you selected a refill.</p>
 
-    <div class="qr">
-      <img src="Screenshot 2025-06-29 at 11.19.56 PM.png" alt="Pay QR Code">
-    </div>
+  <!-- Replace the URL below with your actual image link -->
+  <img src="https://i.imgur.com/YOUR_QR_IMAGE.png" alt="Pay QR Code" />
 
-    <p class="note">UPI Name: <strong>Sumalatha Gurrapu</strong></p>
+  <p class="upi">UPI Name: <strong>Sumalatha Gurrapu</strong></p>
 
-    <p class="cod-warning">🚫 NO CASH ON DELIVERY !!!</p>
-  </div>
-
+  <p class="no-cod">🚫 NO CASH ON DELIVERY !!!</p>
 </body>
 </html>
+
 
 
 
