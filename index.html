@@ -48,18 +48,15 @@
       text-align: center;
     }
 
-    .form-section form {
-      display: flex;
-      flex-direction: column;
-    }
-
     label {
       margin-top: 10px;
+      display: block;
     }
 
     input, select, textarea {
       padding: 8px;
       margin-top: 5px;
+      width: 100%;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
@@ -108,125 +105,8 @@
     <div class="product-grid">
       <div class="card">
         <h3>Hunter-X Custom</h3>
-        <p>Choose your colors and engrave your name.</p>
-      </div>
-      <div class="card">
-        <h3>Hunter-X Duo</h3>
-        <p>Customize both body and grip for a unique look.</p>
-      </div>
-      <div class="card">
-        <h3>Hunter-X Black</h3>
-        <p>Classic sleek black with premium ink.</p>
-      </div>
-      <div class="card">
-        <h3>Hunter-X Blue</h3>
-        <p>Reliable and smooth, perfect for everyday writing.</p>
-      </div>
-    </div>
-  </section>
+        <p>Choose your colors and engr
 
-  <section class="form-section">
-    <h2>🎨 Customize Your Pen</h2>
-    <form id="penForm">
-      <label>Email:
-        <input type="email" name="email" required />
-      </label>
-
-      <label>Phone Number:
-        <input type="tel" name="phone" required />
-      </label>
-
-      <label>Address:
-        <textarea name="address" rows="3" required placeholder="Enter full delivery address"></textarea>
-      </label>
-
-      <label>Body Color:
-        <select name="bodyColor" required>
-          <option>Gold</option><option>Silver</option><option>Black</option>
-          <option>Red</option><option>Green</option><option>Yellow</option>
-          <option>Blue</option><option>Brown</option><option>Orange</option>
-          <option>Pink</option><option>Purple</option><option>Gray</option>
-        </select>
-      </label>
-
-      <label>Grip Color:
-        <select name="gripColor" required>
-          <option>Gold</option><option>Silver</option><option>Black</option>
-          <option>Red</option><option>Green</option><option>Yellow</option>
-          <option>Blue</option><option>Brown</option><option>Orange</option>
-          <option>Pink</option><option>Purple</option><option>Gray</option>
-        </select>
-      </label>
-
-      <label>Name Engraving:
-        <input type="text" name="engraving" required />
-      </label>
-
-      <label>Number of Refills (max 3):
-        <select name="refillCount" id="refillCount" onchange="toggleRefillColor()">
-          <option value="0">0 (No Refill)</option>
-          <option value="1">1 Refill</option>
-          <option value="2">2 Refills</option>
-          <option value="3">3 Refills</option>
-        </select>
-      </label>
-
-      <label id="refillColorLabel" style="display:none;">Refill Color:
-        <select name="refillColor">
-          <option value="">--Select--</option>
-          <option>Black</option>
-          <option>Blue</option>
-        </select>
-      </label>
-
-      <button type="submit">Create My Pen</button>
-    </form>
-  </section>
-
-  <footer>
-    &copy; 2025 Hunter-X Pens. All rights reserved.<br>
-    <strong>NO CASH ON DELIVERY</strong><br>
-    Any questions? Contact: <strong>Dheera.gurrapu@gmail.com</strong>
-  </footer>
-
-  <script>
-    function toggleRefillColor() {
-      const count = document.getElementById("refillCount").value;
-      const label = document.getElementById("refillColorLabel");
-      label.style.display = count === "0" ? "none" : "block";
-    }
-
-    document.getElementById("penForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const form = new FormData(this);
-      const refillCount = parseInt(form.get("refillCount") || "0");
-      const totalCost = 80 + (refillCount * 15);
-
-      const msg =
-        `🖋 NEW HUNTER-X ORDER\n\n` +
-        `📧 Email: ${form.get("email")}\n` +
-        `📞 Phone: ${form.get("phone")}\n` +
-        `📦 Address: ${form.get("address")}\n` +
-        `🎨 Body Color: ${form.get("bodyColor")}\n` +
-        `🖐 Grip Color: ${form.get("gripColor")}\n` +
-        `🔤 Name Engraving: ${form.get("engraving")}\n` +
-        `➕ Add Refill: ${form.get("refillCount")}\n` +
-        `✒️ Refill Color: ${form.get("refillColor") || "Not selected"}\n\n` +
-        `💰 Total: ₹${totalCost}`;
-
-      const email = "Dheera.gurrapu@gmail.com";
-      const subject = encodeURIComponent("🎁 Hunter-X Order Received!");
-      const body = encodeURIComponent(msg);
-      const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
-
-      window.open(mailtoLink, '_blank');  // open email client
-      window.location.href = "creating.html"; // go to payment page
-    });
-  </script>
-
-</body>
-</html>
 
 
 
