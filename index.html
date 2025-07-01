@@ -204,29 +204,30 @@
       const totalCost = 80 + (refillCount * 15);
 
       const msg =
-        `Hi, I just paid for the Hunter-X Pen.\n\n` +
-        `Email: ${form.get("email")}\n` +
-        `Phone: ${form.get("phone")}\n` +
-        `Address: ${form.get("address")}\n` +
-        `Body Color: ${form.get("bodyColor")}\n` +
-        `Grip Color: ${form.get("gripColor")}\n` +
-        `Engraving: ${form.get("engraving")}\n` +
-        `Refill Count: ${form.get("refillCount")}\n` +
-        `Refill Color: ${form.get("refillColor") || "None"}\n\n` +
-        `💰 Total Cost: ₹${totalCost}`;
+        `🖋 NEW HUNTER-X ORDER\n\n` +
+        `📧 Email: ${form.get("email")}\n` +
+        `📞 Phone: ${form.get("phone")}\n` +
+        `📦 Address: ${form.get("address")}\n` +
+        `🎨 Body Color: ${form.get("bodyColor")}\n` +
+        `🖐 Grip Color: ${form.get("gripColor")}\n` +
+        `🔤 Name Engraving: ${form.get("engraving")}\n` +
+        `➕ Add Refill: ${form.get("refillCount")}\n` +
+        `✒️ Refill Color: ${form.get("refillColor") || "Not selected"}\n\n` +
+        `💰 Total: ₹${totalCost}`;
 
       const email = "Dheera.gurrapu@gmail.com";
-      const subject = encodeURIComponent("New Hunter-X Pen Order");
+      const subject = encodeURIComponent("🎁 Hunter-X Order Received!");
       const body = encodeURIComponent(msg);
       const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
 
-      window.open(mailtoLink, '_blank'); // open mail client
-      window.location.href = "creating.html"; // redirect to QR code page
+      window.open(mailtoLink, '_blank');  // open email client
+      window.location.href = "creating.html"; // go to payment page
     });
   </script>
 
 </body>
 </html>
+
 
 
 
