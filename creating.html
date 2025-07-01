@@ -1,62 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Pen is Being Created</title>
+  <meta charset="UTF-8" />
+  <title>Payment - Hunter-X</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
       margin: 0;
-      padding: 0;
+      background: #f0f0f0;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      height: 100vh;
       text-align: center;
     }
+
     .container {
       background: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      max-width: 480px;
+      width: 90%;
     }
+
+    .qr-code {
+      width: 250px;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+    }
+
     h1 {
-      color: #333;
+      color: #222;
+      font-size: 1.8em;
     }
+
     p {
-      margin: 10px 0;
       font-size: 16px;
+      color: #444;
+      margin: 10px 0;
     }
-    .warning {
-      color: red;
+
+    .note {
       font-weight: bold;
-      margin-top: 20px;
-      font-size: 18px;
+      color: red;
+      margin-top: 15px;
     }
-    .qr-image {
-      width: 200px;
-      margin-top: 20px;
-    }
+
     .contact {
-      margin-top: 30px;
       font-size: 14px;
-      color: #555;
+      color: #222;
+      margin-top: 8px;
     }
   </style>
 </head>
 <body>
+
   <div class="container">
-    <h1>Your Pen is Being Created ✨</h1>
-    <p>Please scan the QR code below to pay ₹100 for the pen.<br>Add ₹15 more if you selected a refill.</p>
-    <img src="https://i.imgur.com/YOUR_QR_IMAGE.png" alt="Pay QR Code" class="qr-image">
-    <p><strong>UPI Name:</strong> Sumalatha Gurrapu</p>
-    <p class="warning">🚫 NO CASH ON DELIVERY !!!</p>
+    <h1>🖊️ Your Pen is Being Created ✨</h1>
+    <p>Please scan the QR code below to pay <strong>₹80</strong> for the pen.</p>
+    <p>Add <strong>₹15</strong> more if you selected a refill.</p>
+    
+    <img class="qr-code" src="Screenshot 2025-07-01 at 7.28.25 PM.png" alt="Paytm QR Code" />
+
+    <p><strong>UPI Name: Sumalatha Gurrapu</strong></p>
+    <p class="note">🚫 NO CASH ON DELIVERY !!!</p>
     <p class="contact">Any questions? Contact: <strong>Dheera.gurrapu@gmail.com</strong></p>
   </div>
+
 </body>
 </html>
+
 
 
 
