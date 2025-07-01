@@ -220,12 +220,14 @@
       const body = encodeURIComponent(msg);
       const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
 
-      window.open(mailtoLink, '_blank');
+      window.open(mailtoLink, '_blank'); // open mail client
+      window.location.href = "creating.html"; // redirect to QR code page
     });
   </script>
 
 </body>
 </html>
+
 
 
 
