@@ -19,12 +19,33 @@
       text-align: center;
     }
 
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
     section {
       background: rgba(255, 255, 255, 0.95);
       margin: 20px auto;
       padding: 30px;
       max-width: 900px;
       border-radius: 10px;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 260px;
+      text-align: center;
     }
 
     .form-section form {
@@ -69,53 +90,87 @@
     <p>The ultimate customizable writing experience</p>
   </header>
 
+  <section>
+    <h2>🖋️ About Hunter-X</h2>
+    <p>Hunter-X is a revolutionary customizable pen brand built for writers, students, and creators.</p>
+    <ul>
+      <li>🖍 Fully customizable: body color, grip color, ink color, and name engraving</li>
+      <li>✒ Ink types: Fast-drying black or smooth-flow blue</li>
+      <li>🔁 Optional refills: up to 3 (₹15 each)</li>
+      <li>🚚 Fast delivery: 3–5 business days</li>
+      <li>💵 Cost: ₹80 + refill cost (if any)</li>
+      <li>🚫 No Cash on Delivery — UPI payment only</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>✨ Our Pens</h2>
+    <div class="product-grid">
+      <div class="card">
+        <h3>Hunter-X Custom</h3>
+        <p>Choose your colors and engrave your name.</p>
+      </div>
+      <div class="card">
+        <h3>Hunter-X Duo</h3>
+        <p>Customize both body and grip for a unique look.</p>
+      </div>
+      <div class="card">
+        <h3>Hunter-X Black</h3>
+        <p>Classic sleek black with fast-drying black ink.</p>
+      </div>
+      <div class="card">
+        <h3>Hunter-X Blue</h3>
+        <p>Reliable and smooth, perfect for everyday writing.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="form-section">
     <h2>🎨 Customize Your Pen</h2>
-    <form action="https://formsubmit.co/Dheera.gurrapu@gmail.com" method="POST" id="penForm">
-      <!-- Hidden settings for FormSubmit -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="creating.html">
-
+    <form id="penForm">
       <label>Email:
-        <input type="email" name="Email" required />
+        <input type="email" name="email" required />
       </label>
 
       <label>Phone Number:
-        <input type="tel" name="Phone Number" required />
+        <input type="tel" name="phone" required />
       </label>
 
       <label>Address:
-        <textarea name="Address" rows="3" required placeholder="Enter full delivery address"></textarea>
+        <textarea name="address" rows="3" required placeholder="Enter full delivery address"></textarea>
       </label>
 
       <label>Body Color:
-        <select name="Body Color" required>
-          <option>Black</option><option>Red</option><option>Yellow</option>
-          <option>Blue</option><option>Green</option><option>Dark Blue</option>
-          <option>Brown</option><option>Neon Green</option><option>Neon Orange</option>
-          <option>Rose Gold</option><option>Violet</option><option>Silver</option>
-          <option>Gold</option><option>Purple</option><option>White</option>
-          <option>Orange</option><option>Pink</option><option>Gray</option>
+        <select name="bodyColor" required>
+          <option>Black</option><option>White</option><option>Red</option><option>Blue</option>
+          <option>Green</option><option>Yellow</option><option>Pink</option><option>Purple</option>
+          <option>Silver</option><option>Gold</option><option>Orange</option><option>Brown</option>
+          <option>Gray</option>
         </select>
       </label>
 
       <label>Grip Color:
-        <select name="Grip Color" required>
-          <option>Black</option><option>Red</option><option>Yellow</option>
-          <option>Blue</option><option>Green</option><option>Dark Blue</option>
-          <option>Brown</option><option>Neon Green</option><option>Neon Orange</option>
-          <option>Rose Gold</option><option>Violet</option><option>Silver</option>
-          <option>Gold</option><option>Purple</option><option>White</option>
-          <option>Orange</option><option>Pink</option><option>Gray</option>
+        <select name="gripColor" required>
+          <option>Black</option><option>White</option><option>Red</option><option>Blue</option>
+          <option>Green</option><option>Yellow</option><option>Pink</option><option>Purple</option>
+          <option>Silver</option><option>Gold</option><option>Orange</option><option>Brown</option>
+          <option>Gray</option>
+        </select>
+      </label>
+
+      <label>Ink Color:
+        <select name="inkColor" required>
+          <option>Black (Fast-drying)</option>
+          <option>Blue (Smooth-flow)</option>
         </select>
       </label>
 
       <label>Name Engraving:
-        <input type="text" name="Name Engraving" required />
+        <input type="text" name="engraving" required />
       </label>
 
-      <label>Number of Refills (max 3):
-        <select name="Refill Count" id="refillCount" onchange="toggleRefillColor()">
+      <label>Number of Refills (₹15 each, max 3):
+        <select name="refillCount" id="refillCount" onchange="toggleRefillColor()">
           <option value="0">0 (No Refill)</option>
           <option value="1">1 Refill</option>
           <option value="2">2 Refills</option>
@@ -124,14 +179,14 @@
       </label>
 
       <label id="refillColorLabel" style="display:none;">Refill Color:
-        <select name="Refill Color">
+        <select name="refillColor">
           <option value="">--Select--</option>
           <option>Black</option>
           <option>Blue</option>
         </select>
       </label>
 
-      <button type="submit" onclick="return confirmTotal()">Create My Pen</button>
+      <button type="submit">Create My Pen</button>
     </form>
   </section>
 
@@ -144,19 +199,43 @@
   <script>
     function toggleRefillColor() {
       const count = document.getElementById("refillCount").value;
-      const label = document.getElementById("refillColorLabel");
-      label.style.display = count === "0" ? "none" : "block";
+      document.getElementById("refillColorLabel").style.display = count === "0" ? "none" : "block";
     }
 
-    function confirmTotal() {
-      const count = parseInt(document.getElementById("refillCount").value);
-      const total = 80 + (count * 15);
-      return confirm("✅ Your total is ₹" + total + ". Click OK to continue to payment.");
-    }
+    document.getElementById("penForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const form = new FormData(this);
+      const refillCount = parseInt(form.get("refillCount") || "0");
+      const totalCost = 80 + (refillCount * 15);
+
+      const msg =
+        `🖋 NEW HUNTER-X ORDER\n\n` +
+        `📧 Email: ${form.get("email")}\n` +
+        `📞 Phone: ${form.get("phone")}\n` +
+        `📦 Address: ${form.get("address")}\n` +
+        `🎨 Body Color: ${form.get("bodyColor")}\n` +
+        `🖐 Grip Color: ${form.get("gripColor")}\n` +
+        `🖊 Ink Color: ${form.get("inkColor")}\n` +
+        `🔤 Name Engraving: ${form.get("engraving")}\n` +
+        `➕ Refills: ${refillCount}\n` +
+        `✒ Refill Color: ${form.get("refillColor") || "Not selected"}\n\n` +
+        `💰 Total: ₹${totalCost}\n` +
+        `🚚 Estimated Delivery: 3–5 business days`;
+
+      const email = "Dheera.gurrapu@gmail.com";
+      const subject = encodeURIComponent("🎁 Hunter-X Order Received!");
+      const body = encodeURIComponent(msg);
+      const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+
+      window.open(mailtoLink, '_blank');
+      window.location.href = "creating.html";
+    });
   </script>
 
 </body>
 </html>
+
 
 
 
