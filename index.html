@@ -32,6 +32,22 @@
       border-radius: 10px;
     }
 
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 260px;
+      text-align: center;
+    }
+
     .form-section form {
       display: flex;
       flex-direction: column;
@@ -41,7 +57,7 @@
       margin-top: 10px;
     }
 
-    input, select {
+    input, select, textarea {
       padding: 8px;
       margin-top: 5px;
       border: 1px solid #ccc;
@@ -74,6 +90,41 @@
     <p>The ultimate customizable writing experience</p>
   </header>
 
+  <section>
+    <h2>🖋️ About Hunter-X</h2>
+    <p>Hunter-X is a revolutionary customizable pen brand built for writers, students, and creators.</p>
+    <ul>
+      <li>Fully customizable: body color, grip color, name engraving</li>
+      <li>Refills available: up to 3 refills (₹15 each)</li>
+      <li>Ink color choices: black or blue</li>
+      <li><strong>Pen cost: ₹80</strong></li>
+      <li><strong>Delivery: 3–5 business days</strong></li>
+      <li><strong>NO CASH ON DELIVERY</strong></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>✨ Our Pens</h2>
+    <div class="product-grid">
+      <div class="card">
+        <h3>Hunter-X Custom</h3>
+        <p>Choose your colors and engrave your name.</p>
+      </div>
+      <div class="card">
+        <h3>Hunter-X Duo</h3>
+        <p>Customize both body and grip for a unique look.</p>
+      </div>
+      <div class="card">
+        <h3>Hunter-X Black</h3>
+        <p>Classic sleek black with premium ink.</p>
+      </div>
+      <div class="card">
+        <h3>Hunter-X Blue</h3>
+        <p>Reliable and smooth, perfect for everyday writing.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="form-section">
     <h2>🎨 Customize Your Pen</h2>
     <form id="penForm">
@@ -86,7 +137,7 @@
       </label>
 
       <label>Address:
-        <input type="text" name="address" required />
+        <textarea name="address" rows="3" required placeholder="Enter full delivery address"></textarea>
       </label>
 
       <label>Body Color:
@@ -135,7 +186,7 @@
   <footer>
     &copy; 2025 Hunter-X Pens. All rights reserved.<br>
     <strong>NO CASH ON DELIVERY</strong><br>
-    Any questions? Contact this Gmail: <strong>Dheera.gurrapu@gmail.com</strong>
+    Any questions? Contact: <strong>Dheera.gurrapu@gmail.com</strong>
   </footer>
 
   <script>
@@ -149,6 +200,9 @@
       e.preventDefault();
 
       const form = new FormData(this);
+      const refillCount = parseInt(form.get("refillCount") || "0");
+      const totalCost = 80 + (refillCount * 15);
+
       const msg =
         `Hi, I just paid for the Hunter-X Pen.\n\n` +
         `Email: ${form.get("email")}\n` +
@@ -158,8 +212,8 @@
         `Grip Color: ${form.get("gripColor")}\n` +
         `Engraving: ${form.get("engraving")}\n` +
         `Refill Count: ${form.get("refillCount")}\n` +
-        `Refill Color: ${form.get("refillColor") || "None"}\n` +
-        `💰 Total Cost: ₹${80 + (15 * parseInt(form.get("refillCount") || "0"))}`;
+        `Refill Color: ${form.get("refillColor") || "None"}\n\n` +
+        `💰 Total Cost: ₹${totalCost}`;
 
       const email = "Dheera.gurrapu@gmail.com";
       const subject = encodeURIComponent("New Hunter-X Pen Order");
@@ -169,8 +223,10 @@
       window.open(mailtoLink, '_blank');
     });
   </script>
+
 </body>
 </html>
+
 
 
 
